@@ -1,0 +1,144 @@
+{
+    "characters": [
+      {
+        "id": 1,
+        "name": "Iron Man",
+        "real_name": "Tony Stark",
+        "universe": "Marvel",
+        "avatar":"/assets/iron-man.jpg",
+        "powers": [
+          "Genius-level intellect",
+          "Powered Armor Suit",
+          "Hand-to-hand combat skills"
+        ],
+        "first_appearance": "Tales of Suspense #39 (1963)"
+      },
+      {
+        "id": 2,
+        "name": "Captain America",
+        "real_name": "Steve Rogers",
+        "universe": "Marvel",
+        "avatar":"/assets/captain.jpeg",
+        "powers": [
+          "Superhuman strength",
+          "Enhanced agility",
+          "Expert combat skills",
+          "Vibranium shield"
+        ],
+        "first_appearance": "Captain America Comics #1 (1941)"
+      },
+      {
+        "id": 3,
+        "name": "Thor",
+        "real_name": "Thor Odinson",
+        "universe": "Marvel",
+        "avatar":"/assets/thor.jpeg",
+        "powers": [
+          "Superhuman strength",
+          "Control over thunder and lightning",
+          "Flight (with Mjolnir)",
+          "Immortality"
+        ],
+        "first_appearance": "Journey into Mystery #83 (1962)"
+      },
+      {
+        "id": 4,
+        "name": "Spider-Man",
+        "real_name": "Peter Parker",
+        "universe": "Marvel",
+        "avatar":"/assets/spiderman.jpg",
+        "powers": [
+          "Wall-crawling",
+          "Superhuman strength",
+          "Spider-sense",
+          "Web-shooting"
+        ],
+        "first_appearance": "Amazing Fantasy #15 (1962)"
+      },
+      {
+        "id": 5,
+        "name": "Black Panther",
+        "real_name": "T'Challa",
+        "universe": "Marvel",
+        "avatar":"/assets/panther.jpg",
+        "powers": [
+          "Enhanced senses",
+          "Superhuman strength",
+          "Vibranium suit",
+          "Martial arts expert"
+        ],
+        "first_appearance": "Fantastic Four #52 (1966)"
+      },
+      {
+        "id": 6,
+        "name": "Black Widow",
+        "real_name": "Natasha Romanoff",
+        "universe": "Marvel",
+        "avatar":"/assets/widow.jpeg",
+        "powers": [
+          "Expert hand-to-hand combat",
+          "Marksmanship",
+          "Spy skills",
+          "Enhanced agility"
+        ],
+        "first_appearance": "Tales of Suspense #52 (1964)"
+      },
+      {
+        "id": 7,
+        "name": "Hulk",
+        "real_name": "Bruce Banner",
+        "universe": "Marvel",
+        "avatar":"/assets/hulk.jpg",
+        "powers": [
+          "Superhuman strength",
+          "Regenerative healing",
+          "High resistance to injury",
+          "Gamma radiation-induced abilities"
+        ],
+        "first_appearance": "The Incredible Hulk #1 (1962)"
+      },
+      {
+        "id": 8,
+        "name": "Doctor Strange",
+        "real_name": "Stephen Strange",
+        "universe": "Marvel",
+        "avatar":"/assets/strange.jpeg",
+        "powers": [
+          "Mastery of magic",
+          "Astral projection",
+          "Telepathy",
+          "Flight"
+        ],
+        "first_appearance": "Strange Tales #110 (1963)"
+      },
+      {
+        "id": 9,
+        "name": "Wolverine",
+        "real_name": "James Howlett / Logan",
+        "universe": "Marvel",
+        "avatar":"/assets/poolwolverine.jpg",
+        "powers": [
+          "Regenerative healing factor",
+          "Adamantium skeleton and claws",
+          "Enhanced senses",
+          "Expert hand-to-hand combat"
+        ],
+        "first_appearance": "The Incredible Hulk #180 (1974)"
+      },
+      {
+        "id": 10,
+        "name": "Deadpool",
+        "real_name": "Wade Wilson",
+        "universe": "Marvel",
+        "avatar":"/assets/poolwolverine.jpg",
+        "powers": [
+          "Regenerative healing factor",
+          "Skilled hand-to-hand combatant",
+          "Expert marksman",
+          "Unpredictable and humorous personality"
+        ],
+        "first_appearance": "New Mutants #98 (1990)"
+      }
+    ]
+  }
+  

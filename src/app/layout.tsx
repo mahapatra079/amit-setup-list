@@ -28,6 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav>
+          <h1 className="text-3xl flex justify-center mt-4 underline text-red-600 mb-4">Marvel</h1>
+        </nav>
         {children}
       </body>
     </html>
