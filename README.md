@@ -1,5 +1,5 @@
 **This application been used as ShadCn react framework using NextJS.***
-
+**ShadCn ----> Next JS And Vite**
 
 
 
