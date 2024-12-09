@@ -1,76 +1,95 @@
 "use client"
 
-import { useState, useEffect } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import charactersData from "../../_data/db.json";
-import Loading from "./Loading";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Bar, BarChart } from "recharts"
+import { ChartConfig, ChartContainer } from "@/components/ui/chart"
 
-interface Character {
-  id: number;
-  name: string;
-  real_name: string;
-  universe: string;
-  avatar: string;
-  powers: string[];
-  first_appearance: string;
-}
+const Dashboard: React.FC = () => {
+  const cardData = [
+    { id: 1, title: "Card 1", description: "Description for Card 1", realName: "Amit", universe: "Earth Prime" },
+    { id: 2, title: "Card 2", description: "Description for Card 2", realName: "John", universe: "Earth 2" },
+    { id: 3, title: "Card 3", description: "Description for Card 3", realName: "Jane", universe: "Earth 3" },
+  ];
+  const chartData = [
+    { month: "January", desktop: 186, mobile: 80 },
+    { month: "February", desktop: 305, mobile: 200 },
+    { month: "March", desktop: 237, mobile: 120 },
+    { month: "April", desktop: 73, mobile: 190 },
+    { month: "May", desktop: 209, mobile: 130 },
+    { month: "June", desktop: 214, mobile: 140 },
+  ]
+   
+  const chartConfig = {
+    desktop: {
+      label: "Desktop",
+      color: "#2563eb",
+    },
+    mobile: {
+      label: "Mobile",
+      color: "#60a5fa",
+    },
+  } satisfies ChartConfig
 
-export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [characters, setCharacters] = useState<Character[]>([]);
-
-  // Ensure that useEffect runs only on the client side
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCharacters(charactersData.characters);
-      setIsLoading(false);
-    }, 3000); // Simulate loading delay for 3 seconds
-
-    return () => clearTimeout(timer); // Cleanup timer on unmount
-  }, []);
-
-  // If still loading, show Loading component
-  if (isLoading) {
-    return <Loading />;
-  }
+  const listData = [
+    { id: 1, title: "Item 1", description: "Description for Item 1", realName: "Amit", universe: "Earth Prime" },
+    { id: 2, title: "Item 2", description: "Description for Item 2", realName: "John", universe: "Earth 2" },
+    // Add more data as needed
+  ];
 
   return (
-    <main>
-      <div className="grid grid-cols-3 gap-8 p-4">
-        {characters.map((character) => (
-          <Card key={character.id} className="flex flex-col justify-between shadow-xl">
+    <div className="text-xl p-4 font-bold mb-10">
+      <h1>Welcome to Dashboard</h1>
+      <div className="grid grid-cols-3 gap-5 mt-5">
+        {cardData.map((card) => (
+          <Card key={card.id} className="flex flex-col justify-between shadow-xl">
             <CardHeader className="flex-row items-center justify-between">
-              <CardTitle>{character.name}</CardTitle>
-              <CardDescription>{character.first_appearance}</CardDescription>
-              <Avatar>
-                    <AvatarImage src={character.avatar} alt={character.avatar} />
-                    <AvatarFallback>{character.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
+              <CardTitle>{card.title}</CardTitle>
+              <CardDescription>{card.description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <p><strong>Real Name:</strong> {character.real_name}</p>
-              <p><strong>Universe:</strong> {character.universe}</p>
-              <p><strong>Powers:</strong></p>
-              <ul>
-              {character.powers.map((power,index) => (
-                  <li key={`${character.id}-${power}-${index}`}>{power}</li>
-                ))}
-              </ul>
+              <p className="mb-2"><strong>Real Name:</strong> {card.realName}</p>
+              <p><strong>Universe:</strong> {card.universe}</p>
             </CardContent>
-            <CardFooter className="flex justify-between flex-col items-start gap-4">
-              <p>Marvel Tm X Mutant Tm</p>
-              <div className="flex gap-5">
-                <Badge variant="destructive">Notify me</Badge>
-                <Button variant="secondary">Check This</Button>
-              </div>
-              
-            </CardFooter>
           </Card>
         ))}
+      </div>  
+      <div className="grid grid-cols-2 gap-5 mt-5">
+        <Card className="mt-10 w-[100%] shadow-xl">
+            <CardHeader>
+              <CardTitle className="mb-10">Dashboard graph</CardTitle>
+              <CardDescription>
+                <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+                    <BarChart accessibilityLayer data={chartData}>
+                      <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+                      <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+                    </BarChart>
+               </ChartContainer>
+              </CardDescription>
+            </CardHeader>
+          </Card>    
+           <Card className="mt-10 w-full">
+              <CardHeader>
+                <CardTitle className="mb-2">Dashboard List</CardTitle>
+                <CardDescription>
+                  <div className="grid grid-cols-2 gap-5 mt-5">
+                    <ul className="space-y-4">
+                      {listData.map((item) => (
+                        <li key={item.id} className="bg-white p-4 shadow-lg rounded-lg">
+                          <h2 className="font-semibold text-lg">{item.title}</h2>
+                          <p>{item.description}</p>
+                          <p><strong>Real Name:</strong> {item.realName}</p>
+                          <p><strong>Universe:</strong> {item.universe}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardDescription>
+              </CardHeader>
+          </Card>     
+        </div>   
       </div>
-    </main>
+      
   );
-}
+};
+
+export default Dashboard;
