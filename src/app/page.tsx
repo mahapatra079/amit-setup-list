@@ -37,9 +37,10 @@ const Dashboard: React.FC = () => {
   ];
 
   return (
-    <div className="text-xl p-4 font-bold mb-10">
+  <>
+    <div className="text-xl p-4 font-bold">
       <h1>Welcome to Dashboard</h1>
-      <div className="grid grid-cols-3 gap-5 mt-5">
+      <div className="grid grid-cols-3 gap-5 mt-2">
         {cardData.map((card) => (
           <Card key={card.id} className="flex flex-col justify-between shadow-xl">
             <CardHeader className="flex-row items-center justify-between">
@@ -54,11 +55,11 @@ const Dashboard: React.FC = () => {
         ))}
       </div>  
       <div className="grid grid-cols-2 gap-5 mt-5">
-        <Card className="mt-10 w-[100%] shadow-xl">
+        <Card className="mt-5 w-[100%] shadow-xl">
             <CardHeader>
-              <CardTitle className="mb-10">Dashboard graph</CardTitle>
+              <CardTitle>Dashboard graph</CardTitle>
               <CardDescription>
-                <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+                <ChartContainer config={chartConfig}>
                     <BarChart accessibilityLayer data={chartData}>
                       <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
                       <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
@@ -67,11 +68,11 @@ const Dashboard: React.FC = () => {
               </CardDescription>
             </CardHeader>
           </Card>    
-           <Card className="mt-10 w-full">
+           <Card className="mt-5">
               <CardHeader>
                 <CardTitle className="mb-2">Dashboard List</CardTitle>
                 <CardDescription>
-                  <div className="grid grid-cols-2 gap-5 mt-5">
+                  <div className="grid grid-cols-2 gap-5 mt-4">
                     <ul className="space-y-4">
                       {listData.map((item) => (
                         <li key={item.id} className="bg-white p-4 shadow-lg rounded-lg">
@@ -88,7 +89,7 @@ const Dashboard: React.FC = () => {
           </Card>     
         </div>   
       </div>
-      
+    </>
   );
 };
 
