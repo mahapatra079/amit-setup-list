@@ -3,6 +3,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bar, BarChart } from "recharts"
 import { ChartConfig, ChartContainer } from "@/components/ui/chart"
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, } from "@/components/ui/navigation-menu"
+import Link from "next/link";
 
 const Dashboard: React.FC = () => {
   const cardData = [
@@ -38,6 +40,29 @@ const Dashboard: React.FC = () => {
 
   return (
   <>
+      <div className="text-red-600 text-xl font-bold underline p-4">
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem className="flex gap-5 items-center">
+                  <Link href="/marvel">
+                    <NavigationMenuLink>
+                       Marvel-Characters
+                    </NavigationMenuLink>
+                </Link>
+                <Link href="/marvel">
+                    <NavigationMenuLink>
+                       Marvel-Content
+                    </NavigationMenuLink>
+                </Link>
+                <Link href="/marvel">
+                    <NavigationMenuLink>
+                       Marvel-Content
+                    </NavigationMenuLink>
+                </Link>
+               </NavigationMenuItem>
+            </NavigationMenuList>
+        </NavigationMenu>
+     </div>
     <div className="text-xl p-4 font-bold">
       <h1>Welcome to Dashboard</h1>
       <div className="grid grid-cols-3 gap-5 mt-2">
