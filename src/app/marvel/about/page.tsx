@@ -7,10 +7,10 @@ export default function AboutPage() {
   const [isAbout, setIsAbout] = useState(false);
 
   return (
-    <div>
-      <h1>Marvel Page</h1>
+    <div className="flex justify-center items-center h-[90vh]">
+      <h1>Marvel About Page</h1>
       <Link href={isAbout ? "/marvel/about" : "/marvel"}>
-        <a>{isAbout ? "Back to Marvel Page" : "Go to About Page"}</a>
+        {isAbout ? "Back to Marvel Page" : "Go to About Page"}
       </Link>
       <button onClick={() => setIsAbout((prev) => !prev)}>
         Toggle About Page
