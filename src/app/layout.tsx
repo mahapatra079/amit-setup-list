@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { SidebarProvider, SidebarTrigger, SidebarContent, Sidebar } from "../components/ui/sidebar"; // Import ShadCN sidebar components
+import { SidebarProvider, SidebarTrigger } from "../components/ui/sidebar"; // Import ShadCN sidebar components
 import { AppSidebar } from "@/components/ui/app-sidebar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
